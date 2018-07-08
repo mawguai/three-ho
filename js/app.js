@@ -7,8 +7,18 @@ document.body.appendChild( renderer.domElement );
 // create the shape
 let geometry = new THREE.BoxGeometry( 1, 1, 1);
 
+let cubeMaterials =
+    [
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.FrontSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } )
+    ];
+
 // Create a material
-let material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, wireframe: true });
+let material = new THREE.MeshFaceMaterial( cubeMaterials );
 
 // Create the cube
 let cube = new THREE.Mesh( geometry, material );
@@ -19,11 +29,13 @@ scene.add( cube );
 
 camera.position.z = 3;
 
+
+
 // Game logic
 let update = function()
 {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    //cube.rotation.x += 0.01;
+    //cube.rotation.y += 0.01;
 };
 
 // Game draw
