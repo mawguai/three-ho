@@ -1,11 +1,18 @@
-let scene = new THREE.Scene( );
-let camera = new THREE.PerspectiveCamera( 75, window.innerHeight / window.innerHeight, 0.1, 1000 );
-let renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+// TODO 1 : declare the scene
+let scene =
+
+// TODO 2 : declare the camera, use a perspective one to visualize depth ( fov, ratio, minDist, MaxDist)
+let camera =
+
+// TODO 3 : declare the WebGl renderer
+let renderer =
+
+// TODO 4 : set the renderer size
+renderer.setSize(  );
 document.body.appendChild( renderer.domElement );
 
 // draw
 let render = function()
 {
-    renderer.render( scene, camera );
+    // TODO 5 : call the render method of the renderer, to display the scene using the camera
 };
