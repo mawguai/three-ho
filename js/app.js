@@ -7,14 +7,16 @@ document.body.appendChild( renderer.domElement );
 // create the shape
 let cubeGeometry = new THREE.BoxGeometry( 1, 1, 1);
 
+// TODO 1 : if you want to see the light effect, replace the basicMaterial by one of your choice
+// basic is a constant lightning, for more info see : https://files.readme.io/678338b-viro_lighting_models.jpg
 let cubeMaterials =
     [
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshLambertMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } )
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } )
     ];
 
 // Create the cube
@@ -26,19 +28,17 @@ scene.add( cube );
 
 camera.position.z = 3;
 
-let ambientLight = new THREE.AmbientLight( 0xFFFFFF, 1.2 );
-let pointLight = new THREE.PointLight( 0xFF0040, 4, 50 );
+// TODO 2 : declare the two lights (for more info on lightning see the readme)
+let ambientLight =
+let pointLight =
 
-scene.add( ambientLight );
-scene.add( pointLight );
+// TODO 3 : add lights to the scene
+....
 
 // Game logic
 let update = function()
 {
-    let time = Date.now() * 0.0005;
-    pointLight.position.x = Math.sin( time * 0.7 ) * 30;
-    pointLight.position.y = Math.sin( time * 0.5 ) * 40;
-    pointLight.position.z = Math.sin( time * 0.3 ) * 30;
+    // TODO 4 : to see the pointLight effect more efficiently, make it move over time
 };
 
 // Game draw
