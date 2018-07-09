@@ -9,7 +9,7 @@ let geometry = new THREE.BoxGeometry( 1, 1, 1);
 
 let cubeMaterials =
     [
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.FrontSide } ),
+        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
         new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
         new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
         new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
@@ -17,11 +17,8 @@ let cubeMaterials =
         new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } )
     ];
 
-// Create a material
-let material = new THREE.MeshFaceMaterial( cubeMaterials );
-
 // Create the cube
-let cube = new THREE.Mesh( geometry, material );
+let cube = new THREE.Mesh( geometry, cubeMaterials );
 
 control = new THREE.OrbitControls( camera, renderer.domElement );
 
