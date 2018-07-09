@@ -4,58 +4,18 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-camera.position.set(0, 0, 70);
+// TODO n + 1 : set a nice camera position
+
 control = new THREE.OrbitControls( camera, renderer.domElement );
 
-let floorGeometry = new THREE.PlaneBufferGeometry( 200, 200);
-let floorMaterials = new THREE.MeshPhongMaterial( {map : new THREE.TextureLoader().load('img/floor.jpg'), side : THREE.DoubleSide } );
-let floor = new THREE.Mesh( floorGeometry, floorMaterials );
-floor.position.set( 0, - 1, 0 );
-floor.rotation.x = - Math.PI * 0.5;
-floor.receiveShadow = true;
-floor.position.y = -11;
-scene.add( floor );
+// TODO 1 : create a floor using the PlaneBufferGeometry and the floor.jpg
+// TODO 2 : place/rotate the floor, make it receiving shadow
 
-// let ambientLight = new THREE.AmbientLight( 0xFFFFFF, 1.2 );
-var spotLight = new THREE.SpotLight( 0xffffff );
-spotLight.position.set( 0, 80, 0 );
-spotLight.angle = 0.5;
-spotLight.penumbra = 0.1;
-spotLight.decay = 1.5;
-spotLight.intensity = 2;
-spotLight.distance = 200;
-spotLight.castShadow = true;
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
-spotLight.shadow.camera.near = 10;
-spotLight.shadow.camera.far = 200;
-scene.add( spotLight );
+// TODO 3 : add the spotLight (see readme for more info)
 
-let ambient = new THREE.AmbientLight( 0xFFFFFF, 0.2 );
-scene.add( ambient );
+// TODO or not TODO : add some ambient
 
-let loader = new THREE.FontLoader();
-loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
-
-    let textMaterial = new THREE.MeshLambertMaterial({color: 0x9e0ad8});
-
-    let textGeometry = new THREE.TextGeometry( 'Xebia', {
-        font: font,
-        size: 20,
-        height: 3,
-        curveSegments: 20,
-        bevelEnabled: false,
-        bevelThickness: 2,
-        bevelSize: 2,
-        bevelSegments: 10
-    } );
-
-    let textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
-    textMesh.position.set( -35, -10, 0);
-
-    scene.add( textMesh );
-} );
+// TODO n : add the Xebia logo see : https://threejs.org/examples/#webgl_geometry_text
 
 
 
