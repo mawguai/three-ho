@@ -13,7 +13,8 @@ let material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF, wireframe: true })
 // Create the cube
 let cube = new THREE.Mesh( geometry, material );
 
-control = new THREE.OrbitControls( camera, renderer.domElement );
+// TODO 1 : Instanciate orbitControls using the camera and the canvas dom element
+let control =
 
 scene.add( cube );
 
