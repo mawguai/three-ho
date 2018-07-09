@@ -7,18 +7,10 @@ document.body.appendChild( renderer.domElement );
 // create the shape
 let geometry = new THREE.BoxGeometry( 1, 1, 1);
 
-let cubeMaterials =
-    [
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } ),
-        new THREE.MeshBasicMaterial( {map : new THREE.TextureLoader().load('img/panda_roux.jpg'), side : THREE.DoubleSide } )
-    ];
+// TODO 1 : declare an array of 6 meshBasicMaterial and use a textureLoader (https://threejs.org/docs/#api/loaders/TextureLoader)
 
-// Create the cube
-let cube = new THREE.Mesh( geometry, cubeMaterials );
+// TODO 2 : create the cube using the array
+let cube =
 
 control = new THREE.OrbitControls( camera, renderer.domElement );
 
@@ -31,8 +23,7 @@ camera.position.z = 3;
 // Game logic
 let update = function()
 {
-    //cube.rotation.x += 0.01;
-    //cube.rotation.y += 0.01;
+
 };
 
 // Game draw
